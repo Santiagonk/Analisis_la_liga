@@ -69,7 +69,7 @@ get_Equipo <- function(url){
   penalties <- html_text(penalties)
   
   
-  equipo <- c(nombre_equipo, partidos_jugados, partidos_ganados, partidos_empatados, goles, asistencias, penalties)
+  equipo <- c(nombre_equipo, partidos_jugados, partidos_ganados, partidos_empatados, goles, asistencias, tarjetas, penalties)
 }
 pag[1]
 resw <- get_Equipo(pag[1])
@@ -81,6 +81,6 @@ dim(resultado_datos)
 res<- t(resultado_datos)
 View(res)
 LaLiga <-as.data.frame(res)
-colnames(LaLiga) <- c('Nombre Equipo', 'Partidos Jugados', 'Partidos Ganados','Partidos Empatados','Goles', 'Asistencias', 'Penalties')
+colnames(LaLiga) <- c('Nombre Equipo', 'Partidos Jugados', 'Partidos Ganados','Partidos Empatados','Goles', 'Asistencias', 'Tarjetas', 'Penalties')
 rownames(LaLiga) <- c(1:20)
 View(LaLiga)
