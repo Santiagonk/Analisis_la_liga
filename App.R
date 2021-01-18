@@ -1,15 +1,15 @@
 
 #* @param Partidosjugados
-#* @param PartidosEmpatados
-#* @param Peso
-#* @param Volumen
-#* @param Potencia
-#* @param alto
-#* @param ancho
-#* @param profundidad
+#* @param Partidosganados
+#* @param Partidosempatados
+#* @param Goles
+#* @param Asistencias
+#* @param Tarjetas
+#* @param Penalties
+#* @param Puntos
 #* @get /getCluster
 
-function(precio, opiniones, peso, volumen, potencia, alto, ancho, profundidad){
+function(Partidosjugados, Partidosganados, Partidosempatados, Goles, Asistencias, Tarjetas, Penalties, Puntos){
   campos <- as.vector(data[1,])
   mdist <- matrix(0, ncol = 8, nrow=8)
   for(i in 1:8){
@@ -20,7 +20,7 @@ function(precio, opiniones, peso, volumen, potencia, alto, ancho, profundidad){
   }
   mdist
   
-  rownames(mdist) <- c('Precio', 'Opiniones', 'Peso', 'Volumen','Potencia', 'alto', 'ancho', 'profundidad')
+  rownames(mdist) <- c('Partidos Jugados', 'Partidos Ganados','Partidos Empatados','Goles', 'Asistencias', 'Tarjetas', 'Penalties', 'puntos')
   mdist
   
   dist_total <- apply(mdist, 2, sum)
