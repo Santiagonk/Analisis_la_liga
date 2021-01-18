@@ -1,7 +1,8 @@
 data <- LaLiga_Limpio
+write.csv(data,'data.csv',row.names = FALSE)
 data <- data[,-1]
 data <-scale(data)
-write.csv(data,'data.csv',row.names = FALSE)
+
 
 #Inicio de Cluster con cluster de prueba
 mycluster <- kmeans(data, 3, nstart = 5, iter.max = 30)
